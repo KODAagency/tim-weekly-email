@@ -1,0 +1,76 @@
+---
+layout: default
+title: Your New Jekyll Site
+---
+
+<table class="contianer">
+  <tr>
+    <td>
+
+      {% include grid/row-start.html %}
+
+        {% include grid/col-start.html numCols="12" isLast=true %}
+
+          This is a full width column
+
+        {% include grid/col-end.html %}
+
+      {% include grid/row-end.html %}
+
+
+
+<!--
+      {% include grid/row-start.html %}
+
+        {% include grid/col-start.html numCols="four" isLast=false %}
+
+          Four Columns
+
+        {% include grid/col-end.html %}
+
+        {% include grid/col-start.html numCols="eight" isLast=true %}
+
+          Eight Columns
+
+        {% include grid/col-end.html %}
+
+      {% include grid/row-end.html %}
+-->
+      <!-- Row -->
+      <table class="row">
+        <tr>
+          <td class="wrapper">
+
+            <!-- Eight Columns -->
+            <table class="eight columns">
+              <tr>
+                <td>
+
+                  Eight Columns
+
+                </td>
+                <td class="expander"></td>
+              </tr>
+            </table>
+
+          </td>
+          <td class="wrapper last">
+
+            <!-- Four Columns -->
+            <table class="four columns">
+              <tr>
+                <td>
+
+                  Four Columns
+
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>

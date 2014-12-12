@@ -2,7 +2,7 @@
   "name": "responsive-email-boilerplate",
   "private": true,
   "version": "0.0.0",
-  "description": "Yeoman workflow for responsive-email-boilerplate",
+  "description": "Responsive email boilerplate",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",

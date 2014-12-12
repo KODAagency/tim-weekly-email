@@ -1,13 +1,6 @@
 // Generated on 2014-12-10 using generator-jekyllrb 1.2.1
 'use strict';
 
-// Directory reference:
-//   css: css
-//   sass: _scss
-//   javascript: js
-//   images: img
-//   fonts: fonts
-
 module.exports = function (grunt) {
   // Show elapsed time after tasks run
   require('time-grunt')(grunt);
@@ -24,10 +17,6 @@ module.exports = function (grunt) {
       sass: {
         files: ['<%= yeoman.app %>/_scss/**/*.{scss,sass}'],
         tasks: ['sass:server', 'autoprefixer:server']
-      },
-      autoprefixer: {
-        files: ['<%= yeoman.app %>/css/**/*.css'],
-        tasks: ['copy:stageCss', 'autoprefixer:server']
       },
       jekyll: {
         files: [
@@ -176,70 +165,6 @@ module.exports = function (grunt) {
         }
       }
     },
-    useminPrepare: {
-      options: {
-        dest: '<%= yeoman.dist %>'
-      },
-      html: '<%= yeoman.dist %>/index.html'
-    },
-    usemin: {
-      options: {
-        assetsDirs: '<%= yeoman.dist %>',
-      },
-      html: ['<%= yeoman.dist %>/**/*.html'],
-      css: ['<%= yeoman.dist %>/css/**/*.css']
-    },
-    htmlmin: {
-      dist: {
-        options: {
-          collapseWhitespace: true,
-          collapseBooleanAttributes: true,
-          removeAttributeQuotes: true,
-          removeRedundantAttributes: true
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: '**/*.html',
-          dest: '<%= yeoman.dist %>'
-        }]
-      }
-    },
-    // Usemin adds files to concat
-    concat: {},
-    // Usemin adds files to uglify
-    uglify: {},
-    // Usemin adds files to cssmin
-    cssmin: {
-      dist: {
-        options: {
-          check: 'gzip'
-        }
-      }
-    },
-    imagemin: {
-      dist: {
-        options: {
-          progressive: true
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: '**/*.{jpg,jpeg,png}',
-          dest: '<%= yeoman.dist %>'
-        }]
-      }
-    },
-    svgmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: '**/*.svg',
-          dest: '<%= yeoman.dist %>'
-        }]
-      }
-    },
     copy: {
       dist: {
         files: [{
@@ -273,43 +198,6 @@ module.exports = function (grunt) {
         }]
       }
     },
-    filerev: {
-      options: {
-        length: 4
-      },
-      dist: {
-        files: [{
-          src: [
-            '<%= yeoman.dist %>/js/**/*.js',
-            '<%= yeoman.dist %>/css/**/*.css',
-            '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
-            '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
-          ]
-        }]
-      }
-    },
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      all: [
-        'Gruntfile.js',
-        '<%= yeoman.app %>/js/**/*.js',
-        'test/spec/**/*.js'
-      ]
-    },
-    csslint: {
-      options: {
-        csslintrc: '.csslintrc'
-      },
-      check: {
-        src: [
-          '<%= yeoman.app %>/css/**/*.css',
-          '<%= yeoman.app %>/_scss/**/*.scss'
-        ]
-      }
-    },
     concurrent: {
       server: [
         'sass:server',
@@ -338,18 +226,6 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask('server', function () {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve']);
-  });
-
-  // No real tests yet. Add your own.
-  grunt.registerTask('test', [
-  //   'clean:server',
-  //   'concurrent:test',
-  //   'connect:test'
-  ]);
-
   grunt.registerTask('check', [
     'clean:server',
     'jekyll:check',
@@ -363,17 +239,7 @@ module.exports = function (grunt) {
     // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
     'concurrent:dist',
-    'useminPrepare',
-    'concat',
-    'autoprefixer:dist',
-    'cssmin',
-    'uglify',
-    'imagemin',
-    'svgmin',
-    'filerev',
-    'usemin',
-    'htmlmin'
-    ]);
+  ]);
 
   grunt.registerTask('default', [
     'check',
