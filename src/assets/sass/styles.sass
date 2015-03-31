@@ -1,0 +1,15 @@
+@import jeet/scss/jeet/index
+@import compass-breakpoint/stylesheets/breakpoint
+
++edit()
+
+$bp-mobile: 580px
+
+body
+  color: #fff
+  text-transform: uppercase
+
+
+table.body
+  +breakpoint($bp-mobile)
+    color: #f00

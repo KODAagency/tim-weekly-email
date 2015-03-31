@@ -3,39 +3,30 @@ layout: default
 title: Your New Jekyll Site
 ---
 
-<table class="contianer">
+<table class="container">
   <tr>
     <td>
 
-      {% include grid/row-start.html %}
+      <table class="row">
+        <tr>
+          <td class="wrapper last">
 
-        {% include grid/col-start.html numCols="12" isLast=true %}
+            <table class="twelve columns">
+              <tr>
+                <td>
 
-          This is a full width column
+                  this is a test
 
-        {% include grid/col-end.html %}
+                </td>
+                <td class="expander"></td>
+              </tr>
+            </table>
 
-      {% include grid/row-end.html %}
+          </td>
+        </tr>
+      </table>
 
 
-
-<!--
-      {% include grid/row-start.html %}
-
-        {% include grid/col-start.html numCols="four" isLast=false %}
-
-          Four Columns
-
-        {% include grid/col-end.html %}
-
-        {% include grid/col-start.html numCols="eight" isLast=true %}
-
-          Eight Columns
-
-        {% include grid/col-end.html %}
-
-      {% include grid/row-end.html %}
--->
       <!-- Row -->
       <table class="row">
         <tr>

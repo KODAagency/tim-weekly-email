@@ -1,8 +1,10 @@
 {
   "name": "responsive-email-boilerplate",
   "version": "0.0.0",
-  "dependencies": {
-    "jquery": "~1.10.2",
-    "modernizr": "~2.7"
+  "dependencies": {},
+  "devDependencies": {
+    "ink": "~1.0.5",
+    "jeet": "~6.1.2",
+    "compass-breakpoint": "~2.5.0"
   }
 }
