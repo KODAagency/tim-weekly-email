@@ -3,9 +3,9 @@
 # 2. config.build.yml
 # 3. config.yml
 
-name: koda.agency
+name:
 description:
-url: http://www.koda.agency
+url:
 
 markdown: redcarpet
 highlighter: pygments

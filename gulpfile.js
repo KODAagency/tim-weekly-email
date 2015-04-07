@@ -39,6 +39,45 @@ gulp.task('jekyll', function (cb) {
   });
 });
 
+gulp.task('open-file', function (cb) {
+  exec('open ' + dirs.dist + '/index.html', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    if (err) return cb(err);
+    cb();
+  });
+});
+
+
+/*
+ *
+ * _
+ */
+gulp.task('inject', function () {
+  var target = gulp.src(dirs.dist + '/index.html');
+  var sources = gulp.src(dirs.dist + '/assets/styles/*.css', {read: true}, {
+                                                      transform: function (filepath) {
+                                                        return file.contents.toString('utf8')
+                                                        // return '<link rel="stylesheet" href="' + filepath + '" inline>';
+                                                      }
+                                                    });
+
+  return target.pipe(plugins.inject(sources))
+               .pipe(gulp.dest(dirs.dist));
+});
+
+
+gulp.task('inline-source', function () {
+  return gulp.src(dirs.dist + '/index.html')
+             .pipe(plugins.inlineSource({
+               rootpath: dirs.dist,
+               attribute: '',
+               // swallowErrors: false
+             }))
+             .pipe(gulp.dest(dirs.dist));
+});
+
+
 /*
  *
  * _ s a s s
@@ -60,6 +99,36 @@ gulp.task('sass', function () {
              .pipe(gulp.dest(dirs.dist + '/assets/styles'));
 });
 
+
+/*
+ *
+ * _ useref
+ */
+gulp.task('useref', function () {
+  var assets = plugins.useref.assets({searchPath: ['.']});
+
+  return gulp.src(dirs.dist + '/index.html')
+             .pipe(assets)
+             .pipe(assets.restore())
+             .pipe(plugins.useref())
+             .pipe(gulp.dest(dirs.dist));
+});
+
+
+/*
+ *
+ * _ c s s  i n l i n e
+ */
+gulp.task('inline-css', function () {
+  return gulp.src(dirs.dist + '/index.html')
+             .pipe(plugins.inlineCss({
+               preserveMediaQueries: true,
+               applyLinkTags: false,
+             }))
+             .pipe(gulp.dest(dirs.dist));
+});
+
+
 /*
  *
  * _ b r o w s e r  s y n c
@@ -80,6 +149,13 @@ gulp.task('browser-sync', function () {
    });
 });
 
+
+gulp.task('clipboard', function () {
+  return gulp.src(dirs.dist + '/index.html')
+      .pipe(plugins.clipboard())
+      .pipe(gulp.dest(dirs.dist));
+});
+
 /*
  *
  * _ c l e a n
@@ -90,6 +166,7 @@ gulp.task('browser-sync', function () {
 gulp.task('clean', function (cb) {
   require('del')([dirs.dist], cb);
 });
+
 
 /*
  *
@@ -105,6 +182,18 @@ gulp.task('copy:img', function () {
 gulp.task('copy', [
   'copy:img'
 ]);
+
+
+/*
+ *
+ * _ html min
+ */
+gulp.task('htmlmin', function () {
+  return gulp.src(dirs.dist + '/*.html')
+             .pipe(plugins.htmlmin())
+             .pipe(gulp.dest(dirs.dist));
+});
+
 
 /*
  *
@@ -127,6 +216,7 @@ gulp.task('watch', [
   'watch:sass',
 ]);
 
+
 /*
  *
  * _ M A I N   T A S K S
@@ -146,6 +236,12 @@ gulp.task('build', function (done) {
     'clean',
     'jekyll',
     'sass',
-    'copy',
+    'useref',
+    // 'inject',
+    'inline-source',
+    'inline-css',
+    // 'copy',
+    // 'htmlmin',
+    'open-file',
   done);
 });

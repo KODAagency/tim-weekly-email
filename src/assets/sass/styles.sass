@@ -1,15 +1,452 @@
 @import jeet/scss/jeet/index
 @import compass-breakpoint/stylesheets/breakpoint
 
-+edit()
+// +edit()
 
-$bp-mobile: 580px
+// R E S E T
+// td.wrapper
+//   padding: 0
 
-body
-  color: #fff
-  text-transform: uppercase
+// table.columns td, table.column td
+//   padding: 0
 
+// _ b r e a k p o i n t s
+$bp-mobile: 600px
+
+// _ b a s e l i n e
+$baseline: 16px
+
+// _ c o l o r s
+$blue: #4b5c67
+$blue-light: #55b2db
+$blue-med: #10273d
+$blue-dark: #20234b
+$blue-alt: #27343c
+$blue-light-alt: #a2c4d7
+$blue-footer-border: #3e4b54
+$cream: #fefef7
+$cream-dark: #eae9de
+$gray: #fafafa
+$blue-bg: #ececf1
+$white: #ffffff
 
 table.body
-  +breakpoint($bp-mobile)
-    color: #f00
+  // background-color: $blue-bg
+
+  +breakpoint(max-width $bp-mobile)
+    background-color: $white
+    border-top: 12px solid $white
+    border-bottom: 12px solid $white
+
+table.container
+  background-color: $white
+  border: 10px solid $white
+
+  +breakpoint(max-width $bp-mobile)
+    border: 0
+
+center
+  min-width: 0
+
+p
+  color: $blue-alt
+
+.top-wrapper
+  // background-color: $blue-bg
+
+  p
+    margin: 0
+    font-size: 18px
+
+    &.top-link
+      text-transform: uppercase
+
+      +breakpoint(max-width $bp-mobile)
+        text-align: center
+
+      a
+        color: $blue-alt !important
+
+    &.vol-num
+      text-transform: uppercase
+      text-align: right
+      color: $blue-light
+
+      +breakpoint(max-width $bp-mobile)
+        text-align: center
+
+.headline-wrapper
+  background-color: $blue-med
+
+  h1
+    color: $white
+    text-align: center
+    text-transform: uppercase
+    font-size: 30px
+    line-height: 34px
+
+  h3
+    color: $blue-light
+    text-align: center
+    text-transform: uppercase
+    font-size: 24px
+    line-height: 28px
+
+.intro-wrapper
+  background-color: $cream
+  border-bottom: 1px solid $blue-light
+
+  h2
+    font-size: 24px
+    line-height: 26px
+    color: $blue-dark
+    text-align: center
+
+  .read
+    background: $cream-dark
+    text-align: center
+    font-size: 18px
+    line-height: 24px
+    width: 90%
+    margin: 0 auto
+    padding: 10px
+
+    +breakpoint(max-width $bp-mobile)
+      width: 90%
+
+  ul
+    margin: 0
+    list-style-image: url(https://gallery.mailchimp.com/deff6c1033d6648706fb8b26b/images/4b0abb95-33ae-4d41-a114-509363b0dc46.png)
+
+    li
+      +breakpoint(max-width $bp-mobile)
+        width: 90%
+
+.copy-wrapper
+  background-color: $white
+
+  h3
+    font-size: 22px
+
+    +breakpoint(max-width $bp-mobile)
+      width: 90%
+      margin: 0 auto
+
+  p
+    +breakpoint(max-width $bp-mobile)
+      width: 90%
+      margin: 0 auto
+
+.figure-wrapper
+  border-top: 1px solid $blue-light
+  border-bottom: 1px solid $blue-light
+
+  img
+    +breakpoint(max-width $bp-mobile)
+      max-width: 90%
+
+  .figcaption
+    width: 75%
+    margin: 0 auto
+    text-align: center
+
+.quote-wrapper
+  background-color: $cream
+  border-top: 1px solid $blue-light
+  border-bottom: 1px solid $blue-light
+
+  blockquote
+    font-family: serif
+    font-size: 20px
+    line-height: 24px
+
+  p
+    text-align: center
+
+    &.cite-name
+      font-size: 18px
+
+    &.cite-title
+      font-size: 12px
+      line-height: 14px
+
+.seven-ways-wrapper
+  background-color: $gray
+  border-top: 1px solid $blue-light
+  border-bottom: 1px solid $blue-light
+
+.seven-items-wrapper
+  padding: 0 10px
+
+  p
+    +breakpoint(max-width $bp-mobile)
+      text-align: center
+      width: 90%
+      margin-left: auto
+      margin-right: auto
+
+.footer-wrapper
+  border-top: 10px solid $blue-footer-border
+  background: $blue-alt
+
+  p
+    color: $blue-light-alt
+
+    +breakpoint(max-width $bp-mobile)
+      text-align: center
+
+    &.visit-us
+      font-size: 14px
+
+      a
+        color: $blue-light-alt !important
+
+    &.have-questions,
+    &.tel,
+    &.tel-alt
+      text-align: right
+      font-size: 18px
+
+      +breakpoint(max-width $bp-mobile)
+        text-align: center
+
+    &.copyright
+      font-size: 10px
+      text-align: center
+
+  a
+    color: $blue-light-alt
+
+  .bbb-logo
+    +breakpoint(max-width $bp-mobile)
+      margin: 0 auto
+      float: none
+
+  .social-link-img
+    float: right
+
+    +breakpoint(max-width $bp-mobile)
+      float: none
+      margin: 0 auto
+
+// _ t y p e
+// h1
+
+// h2
+//   font-size: $baseline * 1.5
+//   line-height: $baseline * 1.75
+//   padding-bottom: $baseline
+//   color: $blue-dark
+
+
+// ul
+//   list-style-image: url(https://gallery.mailchimp.com/deff6c1033d6648706fb8b26b/images/4b0abb95-33ae-4d41-a114-509363b0dc46.png)
+
+// table.body
+//   max-width: 600px
+//   margin: 0 auto
+//   background: $white
+
+//   h2
+//     // padding: ($baseline * .5) 0  ($baseline * .75)
+//     color: $blue-dark
+
+//   p
+//     color: $blue
+//     // padding-bottom: $baseline * .75
+
+// center
+//   min-width: 0
+
+// html
+//   background: $blue-bg
+//   font-size: $baseline
+//   line-height: $baseline * 1.25
+//   padding: 20px
+
+//   +breakpoint(max-width $bp-mobile)
+//     padding: 0
+
+// table.section
+//   padding: 20px 0
+//   margin-bottom: 20px
+
+//   &.is-header
+//     // padding-bottom: 0
+//     margin-bottom: 0
+
+//   &.has-header
+//     padding-top: 0
+
+// //.section-inner
+// //  width: 90%
+
+
+// // _ h e a d e r
+// table.top
+//   padding-top: 10px
+
+//   p
+//     &.top-link
+//       text-transform: uppercase
+//       margin: 0
+
+//       a
+//         color: $blue-alt !important
+
+//     &.vol-num
+//       color: $blue-light
+//       font-size: $baseline * 1.5
+//       line-height: $baseline * 2
+//       text-align: right
+
+// table.header
+//   margin-bottom: 10px
+
+//   .header-image
+//     max-width: 100%
+
+// // _ h e a d l i n e  b l o c k
+// table.headline-block
+//   background: $blue-med
+//   padding: 20px 0
+
+//   h1
+//     color: $white
+//     text-transform: uppercase
+//     text-align: center
+//     font-size: $baseline * 2.5
+//     line-height: $baseline * 2.25
+//     padding-bottom: $baseline * .5
+
+//   h3
+//     color: $blue-light
+//     text-transform: uppercase
+//     text-align: center
+//     font-size: $baseline * 1.75
+//     line-height: $baseline * 1.5
+
+// // _ i n t r o  b l o c k
+// table.intro-block
+//   background: $cream
+//   border-bottom: 4px double $blue-light
+
+//   h2
+//     text-align: center
+//     margin-bottom: 20px;
+//     padding: 0
+
+//   h3
+//     text-align: center
+//     background: $cream-dark
+//     font-weight: normal
+//     font-size: $baseline * 1.25
+//     padding: 10px
+//     margin-bottom: 30px
+
+//   ul
+//     font-size: $baseline * 1.1
+
+//     li
+//       margin-bottom: 10px
+
+// // _ c o p y  b l o c k
+// table.copy-block
+
+// // _ f i g u r e  b l o c k
+// table.figure-block
+//   border: 1px solid $blue-light
+//   border-left: 0
+//   border-right: 0
+
+//   .figcaption
+//     text-align: center
+//     font-size: $baseline * .8
+//     line-height: $baseline
+//     max-width: 300px
+
+// // _ q u o t e  b l o c k
+// table.quote-block
+//   border: 1px solid $blue-light
+//   border-left: 0
+//   border-right: 0
+//   background: $cream
+
+//   .quote-body
+//     font-family: serif
+//     font-size: $baseline * 1.5
+//     line-height: $baseline * 1.75
+//     text-align: center
+//     margin: 0
+//     padding: $baseline 0
+//     color: $blue-alt
+
+//   .quote-cite
+//     padding: $baseline 0 0
+
+//   .quote-name
+//     text-align: center
+//     margin: 0
+//     padding-bottom: $baseline
+//     font-size: $baseline * 1.1
+//     color: $blue-alt
+
+//   .quote-title
+//     text-align: center
+//     margin: 0
+//     font-size: $baseline * .8
+//     line-height: $baseline
+//     color: $blue-alt
+
+// // _ s e v e n  w a y s
+// table.seven-ways
+//   background: $gray
+
+//   &.is-header
+//     border-top: 1px solid $blue-light
+
+//   &.has-header
+//     border-bottom: 1px solid $blue-light
+
+//   p
+//     text-align: left
+
+//     +breakpoint(max-width $bp-mobile)
+//       text-align: center
+
+// // _ f o o t e r
+// table.footer
+//   background: $blue
+//   text-align: center
+//   margin-bottom: 10px
+
+//   &.footer-top
+//     border-top: 20px solid $blue-alt
+//     // margin-top: 20px;
+//     margin: 0
+
+//   .bbb-logo
+//     margin-bottom: $baseline
+
+//   a
+//     color: $blue-light-alt !important
+
+//   p
+//     color: $blue-light-alt
+//     // text-align: center
+
+//     &.visit-us
+//       font-size: $baseline * .75
+
+//     &.have-questions
+//       font-size: $baseline * 1.25
+//       text-align: right
+
+//     &.tel,
+//     &.tel-alt
+//       font-size: $baseline
+//       text-align: right
+
+// .copyright
+//   // text-align: center
+//   font-size: $baseline * .7
