@@ -31,10 +31,13 @@ $blue-bg: #ececf1
 $white: #ffffff
 
 table.body
-  // background-color: $blue-bg
+  background-color: $blue-bg
+  border: 20px solid $blue-bg
 
   +breakpoint(max-width $bp-mobile)
     background-color: $white
+    border-left: 0 !important
+    border-right: 0 !important
     border-top: 12px solid $white
     border-bottom: 12px solid $white
 
@@ -50,19 +53,77 @@ center
 
 p
   color: $blue-alt
+  text-align: justify
+
+h3
+  font-size: 24px
+  line-height: 26px
+  margin-bottom: 12px
+
+.top-link-wrapper
+  text-transform: uppercase
+
+  +breakpoint(max-width $bp-mobile)
+    text-align: center !important
+
+.date-wrapper
+  text-transform: uppercase
+  text-align: right
+
+  +breakpoint(max-width $bp-mobile)
+    text-align: center !important
+
+.link-bar
+  color: #f00
+
+  td
+    +breakpoint(max-width $bp-mobile)
+      text-align: center !important
+
+    .follow-us
+      text-align: right
+
+      img
+        width: 20px
+        height: 20px
+        float: right
+
+        +breakpoint(max-width $bp-mobile)
+          float: none !important
+          margin: 10px auto 0 !important
+          display: block !important
+          padding: 0 !important
+
+  .inner-wrapper td
+    padding-bottom: 0
+
+.weekly-update-header
+  border-top: 1px solid $blue-light
+  border-bottom: 1px solid $blue-light
+
+  h1
+    text-align: center
+    text-transform: uppercase
+    font-size: 26px
+
+  h2
+    text-align: center
+    text-transform: uppercase
+    color: $blue-light
+    font-size: 24px
 
 .top-wrapper
   // background-color: $blue-bg
 
-  p
-    margin: 0
+  span
     font-size: 18px
+    display: block
 
     &.top-link
       text-transform: uppercase
 
       +breakpoint(max-width $bp-mobile)
-        text-align: center
+        text-align: center !important
 
       a
         color: $blue-alt !important
@@ -73,7 +134,35 @@ p
       color: $blue-light
 
       +breakpoint(max-width $bp-mobile)
-        text-align: center
+        text-align: center !important
+
+.watch-this-wrapper
+  text-transform: uppercase
+  text-align: center
+  border-top: 1px solid $blue-light
+  border-bottom: 1px solid $blue-light
+
+  .watch-this-intro
+    font-size: 18px
+    margin-bottom: 20px
+
+  .password
+    color: #819c6a
+    font-size: 28px
+    text-transform: none
+
+.portfolio-wrapper
+
+  h2
+    background-color: #27343c
+    color: #fff
+    text-align: center
+    text-transform: uppercase
+    font-size: 26px
+    padding: 5px 0
+
+  a
+    color: #819c6a !important
 
 .headline-wrapper
   background-color: $blue-med
@@ -84,6 +173,7 @@ p
     text-transform: uppercase
     font-size: 30px
     line-height: 34px
+    padding: 0 10px
 
   h3
     color: $blue-light
@@ -91,7 +181,52 @@ p
     text-transform: uppercase
     font-size: 24px
     line-height: 28px
+    padding: 0 10px
 
+.did-you-know-wrapper
+  text-align: center
+
+  .did-you-know-heading
+    text-align: center
+    text-transform: uppercase
+    color: #27343c
+    font-size: 30px
+
+  .did-you-know-sub
+    text-align: center
+    text-transform: uppercase
+    color: #27343c
+    font-size: 24px
+
+  .did-you-know-read-more
+    text-align: center
+
+  .did-you-know-read-more
+    width: 70%
+    margin: 0 auto
+
+    a
+      color: #819c6a !important
+      font-size: 20px !important
+
+
+.services-wrapper
+  border-top: 1px solid $blue-light
+
+  h4
+    font-size: 18px
+    text-align: center
+    text-transform: uppercase
+
+  a
+    display: inline-block
+    padding: 10px 20px
+    background: #819c6a
+    color: #fff !important
+    text-transform: uppercase
+
+// Intro wrapper
+//
 .intro-wrapper
   background-color: $cream
   border-bottom: 1px solid $blue-light
@@ -103,350 +238,137 @@ p
     text-align: center
 
   .read
-    background: $cream-dark
+    background-color: $cream-dark
     text-align: center
     font-size: 18px
     line-height: 24px
-    width: 90%
-    margin: 0 auto
-    padding: 10px
+    padding-top: 10px
+    padding-bottom: 10px
+
+  .highlights
+    padding: 20px 0 0
+
+ul
+  list-style-image: url(https://gallery.mailchimp.com/deff6c1033d6648706fb8b26b/images/4b0abb95-33ae-4d41-a114-509363b0dc46.png)
+
+  li
 
     +breakpoint(max-width $bp-mobile)
-      width: 90%
+      width: 90% !important
+      text-align: left !important
 
-  ul
-    margin: 0
-    list-style-image: url(https://gallery.mailchimp.com/deff6c1033d6648706fb8b26b/images/4b0abb95-33ae-4d41-a114-509363b0dc46.png)
+// .copy-wrapper
+//   background-color: $white
+//
+//   h3
+//     font-size: 22px
+//
+//     +breakpoint(max-width $bp-mobile)
+//       width: 90%
+//       margin: 0 auto
+//
+//   p
+//     +breakpoint(max-width $bp-mobile)
+//       width: 90%
+//       margin: 0 auto
 
-    li
-      +breakpoint(max-width $bp-mobile)
-        width: 90%
-
-.copy-wrapper
-  background-color: $white
-
-  h3
-    font-size: 22px
-
-    +breakpoint(max-width $bp-mobile)
-      width: 90%
-      margin: 0 auto
-
-  p
-    +breakpoint(max-width $bp-mobile)
-      width: 90%
-      margin: 0 auto
-
+// Figure
+//
 .figure-wrapper
-  border-top: 1px solid $blue-light
-  border-bottom: 1px solid $blue-light
+  border-top: solid $blue-light 1px
+  border-bottom: solid $blue-light 1px
 
   img
     +breakpoint(max-width $bp-mobile)
-      max-width: 90%
+      max-width: 90% !important
 
   .figcaption
-    width: 75%
-    margin: 0 auto
     text-align: center
+    padding: 10px 10%
+    color: #4b5d67
 
+// Quote
+//
 .quote-wrapper
-  background-color: $cream
-  border-top: 1px solid $blue-light
-  border-bottom: 1px solid $blue-light
+  border-top: 1px solid $blue-light !important
+  border-bottom: 1px solid $blue-light !important
+
+  .doublequote
+    padding: 10px 0
 
   blockquote
     font-family: serif
     font-size: 20px
     line-height: 24px
+    margin-top: 0
+    margin-bottom: 0
 
-  p
-    text-align: center
+  .quote-cite
+    padding-top: 10px
 
+  span
     &.cite-name
-      font-size: 18px
+      font-size: 20px
 
     &.cite-title
       font-size: 12px
       line-height: 14px
 
+// Seven ways
+//
 .seven-ways-wrapper
-  background-color: $gray
   border-top: 1px solid $blue-light
   border-bottom: 1px solid $blue-light
 
-.seven-items-wrapper
-  padding: 0 10px
+  table.inner-wrapper td
+    color: #4b5d67
 
-  p
+table.inner-wrapper
+  width: 100%
+  min-width: 100%
+
+  td
+    padding-left: 10px
+    padding-right: 10px
+
+    &.copy
+      padding-left: 20px
+      padding-right: 20px
+
     +breakpoint(max-width $bp-mobile)
-      text-align: center
-      width: 90%
-      margin-left: auto
-      margin-right: auto
+      text-align: center !important
 
 .footer-wrapper
-  border-top: 10px solid $blue-footer-border
-  background: $blue-alt
 
-  p
+  table.inner-wrapper td
     color: $blue-light-alt
 
-    +breakpoint(max-width $bp-mobile)
-      text-align: center
-
     &.visit-us
-      font-size: 14px
-
-      a
-        color: $blue-light-alt !important
+      font-size: 12px
 
     &.have-questions,
     &.tel,
     &.tel-alt
       text-align: right
       font-size: 18px
-
-      +breakpoint(max-width $bp-mobile)
-        text-align: center
+      line-height: 24px
 
     &.copyright
       font-size: 10px
-      text-align: center
+      line-height: 14px
 
   a
-    color: $blue-light-alt
+    color: $blue-light-alt !important
+    text-decoration: none !important
 
   .bbb-logo
     +breakpoint(max-width $bp-mobile)
-      margin: 0 auto
-      float: none
+      margin: 0 auto !important
+      float: none !important
 
   .social-link-img
     float: right
 
     +breakpoint(max-width $bp-mobile)
-      float: none
-      margin: 0 auto
-
-// _ t y p e
-// h1
-
-// h2
-//   font-size: $baseline * 1.5
-//   line-height: $baseline * 1.75
-//   padding-bottom: $baseline
-//   color: $blue-dark
-
-
-// ul
-//   list-style-image: url(https://gallery.mailchimp.com/deff6c1033d6648706fb8b26b/images/4b0abb95-33ae-4d41-a114-509363b0dc46.png)
-
-// table.body
-//   max-width: 600px
-//   margin: 0 auto
-//   background: $white
-
-//   h2
-//     // padding: ($baseline * .5) 0  ($baseline * .75)
-//     color: $blue-dark
-
-//   p
-//     color: $blue
-//     // padding-bottom: $baseline * .75
-
-// center
-//   min-width: 0
-
-// html
-//   background: $blue-bg
-//   font-size: $baseline
-//   line-height: $baseline * 1.25
-//   padding: 20px
-
-//   +breakpoint(max-width $bp-mobile)
-//     padding: 0
-
-// table.section
-//   padding: 20px 0
-//   margin-bottom: 20px
-
-//   &.is-header
-//     // padding-bottom: 0
-//     margin-bottom: 0
-
-//   &.has-header
-//     padding-top: 0
-
-// //.section-inner
-// //  width: 90%
-
-
-// // _ h e a d e r
-// table.top
-//   padding-top: 10px
-
-//   p
-//     &.top-link
-//       text-transform: uppercase
-//       margin: 0
-
-//       a
-//         color: $blue-alt !important
-
-//     &.vol-num
-//       color: $blue-light
-//       font-size: $baseline * 1.5
-//       line-height: $baseline * 2
-//       text-align: right
-
-// table.header
-//   margin-bottom: 10px
-
-//   .header-image
-//     max-width: 100%
-
-// // _ h e a d l i n e  b l o c k
-// table.headline-block
-//   background: $blue-med
-//   padding: 20px 0
-
-//   h1
-//     color: $white
-//     text-transform: uppercase
-//     text-align: center
-//     font-size: $baseline * 2.5
-//     line-height: $baseline * 2.25
-//     padding-bottom: $baseline * .5
-
-//   h3
-//     color: $blue-light
-//     text-transform: uppercase
-//     text-align: center
-//     font-size: $baseline * 1.75
-//     line-height: $baseline * 1.5
-
-// // _ i n t r o  b l o c k
-// table.intro-block
-//   background: $cream
-//   border-bottom: 4px double $blue-light
-
-//   h2
-//     text-align: center
-//     margin-bottom: 20px;
-//     padding: 0
-
-//   h3
-//     text-align: center
-//     background: $cream-dark
-//     font-weight: normal
-//     font-size: $baseline * 1.25
-//     padding: 10px
-//     margin-bottom: 30px
-
-//   ul
-//     font-size: $baseline * 1.1
-
-//     li
-//       margin-bottom: 10px
-
-// // _ c o p y  b l o c k
-// table.copy-block
-
-// // _ f i g u r e  b l o c k
-// table.figure-block
-//   border: 1px solid $blue-light
-//   border-left: 0
-//   border-right: 0
-
-//   .figcaption
-//     text-align: center
-//     font-size: $baseline * .8
-//     line-height: $baseline
-//     max-width: 300px
-
-// // _ q u o t e  b l o c k
-// table.quote-block
-//   border: 1px solid $blue-light
-//   border-left: 0
-//   border-right: 0
-//   background: $cream
-
-//   .quote-body
-//     font-family: serif
-//     font-size: $baseline * 1.5
-//     line-height: $baseline * 1.75
-//     text-align: center
-//     margin: 0
-//     padding: $baseline 0
-//     color: $blue-alt
-
-//   .quote-cite
-//     padding: $baseline 0 0
-
-//   .quote-name
-//     text-align: center
-//     margin: 0
-//     padding-bottom: $baseline
-//     font-size: $baseline * 1.1
-//     color: $blue-alt
-
-//   .quote-title
-//     text-align: center
-//     margin: 0
-//     font-size: $baseline * .8
-//     line-height: $baseline
-//     color: $blue-alt
-
-// // _ s e v e n  w a y s
-// table.seven-ways
-//   background: $gray
-
-//   &.is-header
-//     border-top: 1px solid $blue-light
-
-//   &.has-header
-//     border-bottom: 1px solid $blue-light
-
-//   p
-//     text-align: left
-
-//     +breakpoint(max-width $bp-mobile)
-//       text-align: center
-
-// // _ f o o t e r
-// table.footer
-//   background: $blue
-//   text-align: center
-//   margin-bottom: 10px
-
-//   &.footer-top
-//     border-top: 20px solid $blue-alt
-//     // margin-top: 20px;
-//     margin: 0
-
-//   .bbb-logo
-//     margin-bottom: $baseline
-
-//   a
-//     color: $blue-light-alt !important
-
-//   p
-//     color: $blue-light-alt
-//     // text-align: center
-
-//     &.visit-us
-//       font-size: $baseline * .75
-
-//     &.have-questions
-//       font-size: $baseline * 1.25
-//       text-align: right
-
-//     &.tel,
-//     &.tel-alt
-//       font-size: $baseline
-//       text-align: right
-
-// .copyright
-//   // text-align: center
-//   font-size: $baseline * .7
+      float: none !important
+      margin: 0 auto !important
