@@ -29,6 +29,7 @@ $cream-dark: #eae9de
 $gray: #fafafa
 $blue-bg: #ececf1
 $white: #ffffff
+$green: #819c6A
 
 table.body
   background-color: $blue-bg
@@ -96,6 +97,39 @@ h3
 
   .inner-wrapper td
     padding-bottom: 0
+
+table.subscribe
+  .phone-icon
+    width: 60%
+    float: right
+
+    +breakpoint(max-width $bp-mobile)
+      float: none
+
+  h3
+    text-transform: uppercase
+    padding-bottom: 10px
+    border-bottom: 1px solid $blue-light
+
+    +breakpoint(max-width $bp-mobile)
+      text-align: center !important
+
+  p
+    font-size: 18px
+    margin-bottom: 5px
+
+    +breakpoint(max-width $bp-mobile)
+      text-align: center !important
+
+    span
+      color: $green
+
+    &.second-line
+      font-size: 17px
+      margin-bottom: 20px
+
+    &.small-print
+      font-size: 12px
 
 .weekly-update-header
   border-top: 1px solid $blue-light
@@ -191,12 +225,15 @@ h3
     text-transform: uppercase
     color: #27343c
     font-size: 30px
+    line-height: 34px
+    margin-bottom: 0
 
   .did-you-know-sub
     text-align: center
     text-transform: uppercase
     color: #27343c
     font-size: 24px
+    line-height: 28px
 
   .did-you-know-read-more
     text-align: center
